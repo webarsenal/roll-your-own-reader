@@ -1,0 +1,49 @@
+/* Body */
+body {background-color:#fff; font-family:'Droid Sans', sans-serif; font-size:80%; height:100%; margin:0; overflow:hidden; padding:0}
+html {height:100%}
+
+/* General */
+a {color:#3399cc; outline:none; text-decoration:none}
+a:hover {text-decoration:underline}
+::-webkit-scrollbar {display:none}
+.clearfix:after {clear:both; content:"."; display:block; height:0; visibility:hidden; font-size:0}
+
+/* Header */
+#hdr {background-color:#2c3e50; color:#fff; display:block; padding:1%; position:relative; z-index:100}
+#hdr h1 {display:inline-block; font-size:14px; margin:0}
+#hdr a {color:#fff; float:right}
+
+/* List */
+.list ul  {list-style:none; margin:0; padding:0}
+.list a:hover {background:#DEEBF2; text-decoration:none}
+.list a.active {background:#3399cc; color:#fff}
+
+/* Nav */
+#feeds {background:#fff; display:table-cell; float:left; margin:0; overflow:auto; padding:1%; vertical-align:top; min-width:80px; width:14%}
+#feeds a {border-left:3px solid #fff; color:#444; display:block; overflow:hidden; padding:10px 5px; text-overflow:ellipsis; transition:background 1s; white-space:nowrap}
+#feeds a:hover {background:#eee; border-left-color:#e74c3c}
+#feeds a.active {background:#e9e9e9; border-left-color:#c0392b; color:#c0392b}
+
+/* Articles */
+#articles {display:table-cell; height:100%; float:left; overflow:auto; min-width:140px; padding:1%; width:29%}
+#articles article {background-color:#eee; color:#555; display:block}
+#articles article a {background:#f9f9f9; border-left:3px solid transparent; display:block; padding:15px; transition:background 1s}
+#articles article a.active, #articles article a.active:hover {background:#E8F1F7; background-color:#eee; border-left-color:#c0392b; color:#2980b9}
+#articles article a:hover {background-color:#eee; border-left-color:#e74c3c}
+#articles p {margin:0}
+#articles a .date {color:#555; font-family:Georgia; font-size:70%; font-style:italic}
+
+/* Content */
+#content-con {background-color:#fff; display:table-cell; overflow:auto}
+#content-con .content-title {display:block; margin-bottom:10px; padding:0 20px 0 15px; width:auto}
+#content-con .content-date {color:#555; font-weight:300; font-size:12px; padding-left:15px}
+#content {line-height:1.4; padding:0 20px 0 15px}
+#content img {height:auto; max-width:600px}
+#content iframe {width:100% !important}
+
+@media (max-width:600px) {
+	#feeds {width:30%}
+	#articles {width:66%}
+	#content-con {display:none}
+	#content img {max-width:320px}
+}

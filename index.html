@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Roll Your Own Reader</title>
+	<link rel="stylesheet" type="text/css" href="./rdr-assets/style.css" />
+</head>
+<body>
+	<div id="wrapper" class="clearfix">
+		<header id="hdr" class="clearfix">
+			<h1>Roll Your Own Reader</h1>
+			<a href="#" class="tog">Close Menus >></a>
+		</header>
+		<div id="container" class="clearfix">
+			<nav id="feeds" class="col list">
+				<!-- Add your feeds here -->
+				<a href="http://lifehacker.com/rss">Lifehacker</a>
+				<a href="http://www.digg.com/rss/index.xml">Digg Top Stories</a>
+				<a href="http://www.engadget.com/rss.xml">Engadget</a>
+				<a href="http://feeds.feedburner.com/CssTricks">CSS Tricks</a>
+			</nav>
+			<div id="articles" class="col list">
+				Loading...
+			</div>
+			<div id="content-con" class="col">
+				<div id="content-scroll">
+					<h3 class="content-title"></h3>
+					<p class="content-date"></p>
+					<div id="content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="./rdr-assets/feeds.js"></script>
+</body>
+</html>
