@@ -15,13 +15,13 @@ RDR.menu = {
 		var cDisplay = (RDR.screenWidth <= 600) ? 'none' : 'block';
 		$('#feeds, #articles').css({'display' : 'block'});
 		$('#content-con').css({'display' : cDisplay});
-		$('#hdr .tog').text('Close Menus >>').removeClass('closed');
+		$('#hdr .tog').text('<< Close Menus').removeClass('closed');
 	},
 
 	close : function () {
 		$('#feeds, #articles').css({'display' : 'none'});
 		$('#content-con').css({'display' : 'block'});
-		$('#hdr .tog').text('<< Open Menus').addClass('closed');
+		$('#hdr .tog').text('Open Menus >>').addClass('closed');
 	},
 
 	check : function () {
