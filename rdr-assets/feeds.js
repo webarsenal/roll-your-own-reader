@@ -1,47 +1,37 @@
 // load Google Feeds
 google.load("feeds", "1");
 
-var RDR = RDR || {};
+var RDR = {};
 
 // variables
 RDR.screenWidth = window.innerWidth;
-RDR.art = ''; // holds articles
+// holds articles
+RDR.art = ''; 
 
 // menu controls
 RDR.menu = {
 
 	open : function () {
-
-		var pan = {},
-			cDisplay = (RDR.screenWidth <= 600) ? 'none' : 'table-cell';
-
-		$('#feeds, #articles').css({'display' : 'table-cell'});
+		var cDisplay = (RDR.screenWidth <= 600) ? 'none' : 'block';
+		$('#feeds, #articles').css({'display' : 'block'});
 		$('#content-con').css({'display' : cDisplay});
 		$('#hdr .tog').text('Close Menus >>').removeClass('closed');
-
 	},
 
 	close : function () {
-
 		$('#feeds, #articles').css({'display' : 'none'});
-		$('#content-con').css({'display' : 'table-cell'});
+		$('#content-con').css({'display' : 'block'});
 		$('#hdr .tog').text('<< Open Menus').addClass('closed');
-
 	},
 
 	check : function () {
-
-		var $tog = $('#hdr .tog'),
-			toggle = !$tog.hasClass('closed') ? 'open' : 'close';
+		var toggle = !$('#hdr .tog').hasClass('closed') ? 'open' : 'close';
 		this[toggle]();
-
 	},
 
 	toggle : function (tog) {
-
 		var toggle = $(tog).hasClass('closed') ? 'open' : 'close';
 		this[toggle]();
-
 	}
 
 };
@@ -74,12 +64,12 @@ RDR.bindEvents = function () {
 	});
 
 	// handle orientation change
-	$(window).bind('orientationchange', function (e) {
+	$(window).bind('orientationchange', function () {
 		RDR.adapt.setHeight();
 	});
 
 	// handle resize
-	$(window).resize(function (e) {
+	$(window).resize(function () {
 		RDR.screenWidth = window.innerWidth;
 		RDR.adapt.setHeight();
 		RDR.menu.check();
@@ -92,9 +82,7 @@ RDR.bindEvents = function () {
 	});
 
 	/* Touch Events */
-	var el, hammertime2, hammertime3;
-
-	el = document.getElementById('wrapper');
+	var el = document.getElementById('wrapper');
 
 	// swipe left, close menus
     Hammer(el).on('swipeleft', function () {
@@ -187,7 +175,7 @@ RDR.articles = {
 
 						RDR.art = result.feed.entries;
 
-						$(this).animate({scrollTop: '0px'}, {duration: 0, easing: 'swing'});
+						$(this).animate({scrollTop: '0'}, {duration: 0, easing: 'swing'});
 
 						if (loadFirst) {
 							RDR.articles.loadFirst();
@@ -217,11 +205,10 @@ RDR.adapt = {
 	// adapt column heights
 	setHeight : function () {
 
-		var hdrHeight, screenHeight, screenWidth, winHeight, winWidth;
+		var hdrHeight, screenHeight;
 
 		hdrHeight = $('#hdr').height();
 		hdrHeight = hdrHeight + 11;
-
 		screenHeight = window.innerHeight;
 		$('#container .col').css({'height' : screenHeight - hdrHeight});
 
